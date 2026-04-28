@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctanos</title>
+    <title>Contáctanos | FitnessStore</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Header / Navbar -->
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2" href="#">
@@ -23,7 +22,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarCategorias" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Categorías
@@ -35,7 +34,7 @@
                 </ul>
                 </li>
             <li class="nav-item"><a class="nav-link" href="aboutus.html">Acerca de nosotros</a></li>
-            <li class="nav-item"><a class="nav-link" href="contactus.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contactus.html">Contacto</a></li>
         </ul>
         <div class="d-flex align-items-center gap-3">
             <button type="button" class="btn position-relative" id="cartIconBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
@@ -48,7 +47,118 @@
     </div>
     </nav>
 
-    <!-- Footer -->
+    <section class="hero-section bg-dark text-white py-5 text-center">
+        <div class="container py-5">
+            <h1 class="display-3 fw-bold">Ponte en <span class="text-danger">Contacto</span></h1>
+            <p class="lead">¿Dudas sobre un pedido o necesitas asesoría deportiva? Estamos para ayudarte.</p>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <h2 class="text-primary mb-4">Hablemos</h2>
+                <p class="text-muted mb-5">Nuestro equipo de soporte está listo para resolver tus dudas y ayudarte a encontrar el equipamiento perfecto para tus entrenamientos.</p>
+                
+                <div class="d-flex mb-4">
+                    <i class="bi bi-geo-alt-fill fs-2 text-danger me-3"></i>
+                    <div>
+                        <h4 class="fw-bold mb-1">Visítanos</h4>
+                        <p class="text-muted mb-0">Av. Reforma 123, Colonia Centro<br>CDMX, México. C.P. 06000</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4">
+                    <i class="bi bi-telephone-fill fs-2 text-danger me-3"></i>
+                    <div>
+                        <h4 class="fw-bold mb-1">Llámanos</h4>
+                        <p class="text-muted mb-0">+52 55 1234 5678<br>+52 55 8765 4321</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4">
+                    <i class="bi bi-envelope-fill fs-2 text-danger me-3"></i>
+                    <div>
+                        <h4 class="fw-bold mb-1">Escríbenos</h4>
+                        <p class="text-muted mb-0">info@fitnessstore.com<br>soporte@fitnessstore.com</p>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <i class="bi bi-clock-fill fs-2 text-danger me-3"></i>
+                    <div>
+                        <h4 class="fw-bold mb-1">Horarios de Atención</h4>
+                        <p class="text-muted mb-0">Lunes a Viernes: 9:00 AM - 8:00 PM<br>Sábados y Domingos: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-light">
+                    <h3 class="text-primary mb-4">Envíanos un mensaje</h3>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label fw-bold text-muted">Nombre completo</label>
+                                <input type="text" class="form-control p-3" id="nombre" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-bold text-muted">Correo electrónico</label>
+                                <input type="email" class="form-control p-3" id="email" placeholder="tu@email.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="asunto" class="form-label fw-bold text-muted">Asunto</label>
+                                <select class="form-select p-3" id="asunto">
+                                    <option selected>Duda sobre un producto</option>
+                                    <option value="1">Estatus de mi pedido</option>
+                                    <option value="2">Devoluciones y garantías</option>
+                                    <option value="3">Ventas al mayoreo / Patrocinios</option>
+                                    <option value="4">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="mensaje" class="form-label fw-bold text-muted">Tu mensaje</label>
+                                <textarea class="form-control p-3" id="mensaje" rows="4" placeholder="¿En qué te podemos ayudar?" required></textarea>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-danger w-100 p-3 fw-bold fs-5 rounded-3">Enviar Mensaje <i class="bi bi-send ms-2"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5 mb-4">
+        <div class="container">
+            <h2 class="text-center text-primary mb-5">Nuestras Formas de Entrega</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 product-card">
+                        <i class="bi bi-box-seam fs-1 text-danger mb-3"></i>
+                        <h4 class="text-primary fw-bold">Envío Estándar</h4>
+                        <p class="text-muted">Entrega de 3 a 5 días hábiles a cualquier parte de la República Mexicana. <strong>¡Gratis en compras mayores a $500 MXN!</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 product-card">
+                        <i class="bi bi-rocket-takeoff fs-1 text-danger mb-3"></i>
+                        <h4 class="text-primary fw-bold">Envío Express</h4>
+                        <p class="text-muted">¿Te urge para el partido de mañana? Recibe tu pedido en 24 a 48 horas hábiles por un costo adicional mínimo.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 product-card">
+                        <i class="bi bi-shop fs-1 text-danger mb-3"></i>
+                        <h4 class="text-primary fw-bold">Recoger en Tienda</h4>
+                        <p class="text-muted">Compra en línea y pasa por tu pedido a nuestra sucursal en CDMX en tan solo 2 horas. Sin costo de envío.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-primary text-white pt-5 pb-4">
     <div class="container">
         <div class="row">
@@ -77,6 +187,22 @@
     </div>
     </footer>
     
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="cartModalLabel"><i class="bi bi-cart"></i> Mi Carrito</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="cartModalBody">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
