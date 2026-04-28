@@ -1,9 +1,10 @@
-/* Estilos personalizados adicionales (complemento a Bootstrap) */
+/* Paleta principal de la página */
 :root {
   --blue: #1e40af;
   --red: #dc2626;
 }
 
+/* Estilos de títulos y párrafos */
 body {
   font-family: 'DM Sans', sans-serif;
 }
@@ -14,6 +15,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
   letter-spacing: 0.01em;
 }
 
+/* Logo provisional */
 .logo-circle {
   width: 42px;
   height: 42px;
@@ -26,10 +28,12 @@ h1, h2, h3, h4, h5, .navbar-brand {
   background: linear-gradient(135deg, var(--blue), var(--red));
 }
 
+/* Estilo del banner inicial (lo del mundial 2026) */
 .hero-section {
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
 }
 
+/* Formato de las tarjetas de los productos */
 .product-card {
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: default;
@@ -45,6 +49,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
   object-fit: cover;
 }
 
+/* Botón de agregar se torna rojo cuando se hace hover */
 .btn-danger {
   background-color: var(--red);
   border-color: var(--red);
@@ -55,6 +60,8 @@ h1, h2, h3, h4, h5, .navbar-brand {
   border-color: #b91c1c;
 }
 
+/* Elementos default de bootstrap que movimos ligeramente los colores.
+   Se usa !important para dar prioridad sobre cualquier otro formato */
 .text-primary {
   color: var(--blue) !important;
 }
@@ -68,13 +75,13 @@ footer a:hover {
   color: white !important;
 }
 
-/* Estilo para el contador del carrito */
+/* Contador del carrito */
 #cartCount {
   font-size: 0.65rem;
   padding: 0.2rem 0.4rem;
 }
 
-/* Tabla del carrito dentro del modal */
+/* Formato de la tabla dentro del carrito (de los productos) */
 .cart-table {
   width: 100%;
   border-collapse: collapse;

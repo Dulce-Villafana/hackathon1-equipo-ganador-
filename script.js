@@ -1,4 +1,4 @@
-// Productos de ejemplo (simplificados)
+// Productos de la tienda
 const productsFutbol = [
     {id: 1, name: 'Balón Futbol', price: 600, image: './imagenes/futbolBalon.jpg', oldPrice: 1200},
     {id: 2, name: 'Playera Selección Mexicana', price: 1400, image: './imagenes/futbolPlayeraSeleccion.jpg', oldPrice: 2000},
@@ -26,10 +26,11 @@ const productsNatacion = [
     {id: 6, name: 'Tabla de Nado', price: 300, image: './imagenes/natacionTabla.jpg', oldPrice: 500}
 ];
 
-// Carrito de compras (array de objetos { product, quantity })
+// Variable donde se van a guardar todos los productos del carrito.
 let cart = [];
 
-// Función para agregar un producto al carrito
+// Función para agregar un producto al carrito. Si no hay uno previo, se agrega.
+// Si ya había uno, se le aumenta la cantidad de productos.
 function addToCart(product) {
     const existingItem = cart.find(item => item.product.id === product.id);
     if (existingItem) {
@@ -38,11 +39,13 @@ function addToCart(product) {
         cart.push({ product: product, quantity: 1 });
     }
     updateCartBadge();
-    // Opcional: mensaje de confirmación
+
+    // Mensaje para debugging en caso de que no funcione
     console.log(`Agregado: ${product.name}`);
 }
 
-// Actualiza el contador del ícono del carrito
+// Actualiza el contador del ícono del carrito en tiempo real. Si no hay productos
+// no sale nada pero si tiene mínimo uno, si muestra un número en todo momento.
 function updateCartBadge() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     const badge = document.getElementById('cartCount');
@@ -52,7 +55,9 @@ function updateCartBadge() {
     }
 }
 
-// Renderiza el contenido del modal del carrito
+// Renderiza el contenido del modal del carrito. Acá le damos toda la forma a lo que
+// se verá en el carrito (cuando tiene productos, cuando no, organiza el formato
+// cuando tiene uno o varios productos, etc)
 function renderCartModal() {
     const modalBody = document.getElementById('cartModalBody');
     if (!modalBody) return;
@@ -113,7 +118,9 @@ function renderCartModal() {
     modalBody.innerHTML = itemsHtml;
 }
 
-// Cambiar cantidad de un producto en el carrito
+// Cambiar cantidad de un producto en el carrito. Si no existe, se pone en 1.
+// Si ya tiene uno, se suma al anterior. Si se cambia de 1 a 0 (porque se quita),
+// pues se borra el producto como tal
 function changeQuantity(productId, delta) {
     const itemIndex = cart.findIndex(item => item.product.id === productId);
     if (itemIndex !== -1) {
@@ -135,7 +142,9 @@ function removeFromCart(productId) {
     renderCartModal();
 }
 
-// Función para renderizar productos (modificada para usar addToCart)
+// Función para renderizar productos. Como tenemos los productos guardados en
+// arreglos aquí, necesitamos modificar el DOM después. Además si se agregan o 
+// quitan productos, se acomoda en automático.
 function renderProducts(products, gridId) {
     const grid = document.getElementById(gridId);
     if (!grid) return;
@@ -159,14 +168,17 @@ function renderProducts(products, gridId) {
     `).join('');
 }
 
-// Inicializar
+// Inicializar los productos con la función de arriba. Para que se genere de
+// una vez todos le pasamos parámetros a renderProducts de cada sección.
+
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts(productsFutbol, 'productsGridFutbol');
     renderProducts(productsBasketball, 'productsGridBasketball');
     renderProducts(productsNatacion, 'productsGridNatacion');
     updateCartBadge();
 
-    // Al abrir el modal, actualizamos su contenido
+    // Esta parte actualiza el modal para que se muestren de manera correcta
+    // los productos (o no, en caso de no tenerlos)
     const cartModal = document.getElementById('cartModal');
     if (cartModal) {
         cartModal.addEventListener('show.bs.modal', () => {
