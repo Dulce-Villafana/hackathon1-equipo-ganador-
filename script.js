@@ -1,4 +1,4 @@
-// Productos de ejemplo (simplificados)
+// Lista de productos (futbol -> basketball -> natacion)
 const productsFutbol = [
     {id: 1, name: 'Balón Futbol', price: 600, image: './imagenes/futbolBalon.jpg', oldPrice: 1200},
     {id: 2, name: 'Playera Selección Mexicana', price: 1400, image: './imagenes/futbolPlayeraSeleccion.jpg', oldPrice: 2000},
@@ -26,7 +26,7 @@ const productsNatacion = [
     {id: 6, name: 'Tabla de Nado', price: 300, image: './imagenes/natacionTabla.jpg', oldPrice: 500}
 ];
 
-// Carrito de compras (array de objetos { product, quantity })
+//Aquí se van a guardar los productos del carrito
 let cart = [];
 
 // Función para agregar un producto al carrito
@@ -38,7 +38,6 @@ function addToCart(product) {
         cart.push({ product: product, quantity: 1 });
     }
     updateCartBadge();
-    // Opcional: mensaje de confirmación
     console.log(`Agregado: ${product.name}`);
 }
 
@@ -52,7 +51,8 @@ function updateCartBadge() {
     }
 }
 
-// Renderiza el contenido del modal del carrito
+// Carga el contenido del carrito (si se agregan o eliminan productos para que se visualice en el modal)
+// Si no tiene productos imprime "tu carrito está vacío"
 function renderCartModal() {
     const modalBody = document.getElementById('cartModalBody');
     if (!modalBody) return;
@@ -124,7 +124,7 @@ function changeQuantity(productId, delta) {
             cart[itemIndex].quantity = newQuantity;
         }
         updateCartBadge();
-        renderCartModal(); // Actualizar modal abierto
+        renderCartModal(); 
     }
 }
 
@@ -135,7 +135,7 @@ function removeFromCart(productId) {
     renderCartModal();
 }
 
-// Función para renderizar productos (modificada para usar addToCart)
+// Función para renderizar productos 
 function renderProducts(products, gridId) {
     const grid = document.getElementById(gridId);
     if (!grid) return;
@@ -166,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProducts(productsNatacion, 'productsGridNatacion');
     updateCartBadge();
 
-    // Al abrir el modal, actualizamos su contenido
     const cartModal = document.getElementById('cartModal');
     if (cartModal) {
         cartModal.addEventListener('show.bs.modal', () => {
