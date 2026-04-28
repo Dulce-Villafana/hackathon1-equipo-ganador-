@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitnessStore | Tienda Deportiva</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div class="logo-circle bg-gradient-primary d-flex align-items-center justify-content-center text-white fw-bold">FS</div>
+        <span class="fw-bold text-primary fs-3">FitnessStore</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarCategorias" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorías
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarCategorias">
+                    <li><a class="dropdown-item" href="#productosFutbol">Fútbol</a></li>
+                    <li><a class="dropdown-item" href="#productosBasketball">Basketball</a></li>
+                    <li><a class="dropdown-item" href="#productosNatacion">Natación</a></li>
+                </ul>
+                </li>
+            <li class="nav-item"><a class="nav-link" href="">Acerca de nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+            <button type="button" class="btn position-relative" id="cartIconBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <i class="bi bi-cart fs-4 text-primary"></i>
+                <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.7rem;">0</span>
+            </button>
+            <span class="badge bg-danger rounded-pill px-3 py-2">¡Envío gratis!</span>
+        </div>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Banner grandote inicial -->
+    <section class="hero-section bg-dark text-white py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h1 class="display-3 fw-bold">Equípate para <span class="text-danger">ganar</span></h1>
+            <p class="lead">Y ten la oportunidad de ganar boletos para este Mundial 2026</p>
+
+        </div>
+        <div class="col-lg-6 text-center">
+            <img src="https://img.asmedia.epimg.net/resizer/v2/LMVTCBJJTNCYNCIEX6JS2ZBUJE.png?auth=bede69c6c9aa5250385d1a579eb41a019f89740f0051c9012e646d53f412fb40&width=1472&height=1104&focal=496%2C247" alt="Hero" class="img-fluid rounded-4 shadow-lg" />
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Sección Futbol -->
+    <section id="productosFutbol" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center text-primary mb-5">Futbol</h2>
+        <div class="row g-4" id="productsGridFutbol">
+        <!-- Productos -->
+        </div>
+    </div>
+    </section>
+
+    <!-- Sección Basketball -->
+    <section id="productosBasketball" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center text-primary mb-5">Basketball</h2>
+        <div class="row g-4" id="productsGridBasketball">
+        <!-- Productos -->
+        </div>
+    </div>
+    </section>
+
+    <!-- Sección Natación -->
+    <section id="productosNatacion" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center text-primary mb-5">Natacion</h2>
+        <div class="row g-4" id="productsGridNatacion">
+        <!-- Productos -->
+        </div>
+    </div>
+    </section>
+
+    <!-- Beneficios y Garantías -->
+    <section class="container py-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+        <i class="bi bi-truck fs-1 text-danger"></i>
+        <h4 class="mt-3">Envío gratis</h4>
+        <p class="text-muted">En compras mayores a $500 MXN</p>
+        </div>
+        <div class="col-md-4 mb-4">
+        <i class="bi bi-shield-check fs-1 text-danger"></i>
+        <h4 class="mt-3">Garantía 30 días</h4>
+        <p class="text-muted">Devoluciones sin complicaciones</p>
+        </div>
+        <div class="col-md-4 mb-4">
+        <i class="bi bi-credit-card fs-1 text-danger"></i>
+        <h4 class="mt-3">Pago seguro</h4>
+        <p class="text-muted">Múltiples métodos de pago</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-4 mb-4">
+            <h3>FitnessStore</h3>
+            <p class="text-white-50">Tu tienda deportiva de confianza. Los mejores productos para tu rendimiento.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h4>Enlaces</h4>
+            <ul class="list-unstyled">
+            <li><a href="#" class="text-white-50 text-decoration-none">Inicio</a></li>
+            <li><a href="#categorias" class="text-white-50 text-decoration-none">Categorías</a></li>
+            <li><a href="#productos" class="text-white-50 text-decoration-none">Productos</a></li>
+            <li><a href="#contacto" class="text-white-50 text-decoration-none">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h4>Contacto</h4>
+            <p><i class="bi bi-geo-alt"></i> Av. Reforma 123, CDMX</p>
+            <p><i class="bi bi-telephone"></i> +52 55 1234 5678</p>
+            <p><i class="bi bi-envelope"></i> info@fitnessstore.com</p>
+        </div>
+        </div>
+        <hr class="bg-white-50" />
+        <div class="text-center text-white-50">
+        &copy; 2026 FitnessStore. Todos los derechos reservados.
+        </div>
+    </div>
+    </footer>
+
+    <!-- Visual del carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="cartModalLabel"><i class="bi bi-cart"></i> Mi Carrito</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="cartModalBody">
+                    <!-- Contenido del carrito (si tiene. SI no, tira un mensaje que dice que no tiene productos) -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
